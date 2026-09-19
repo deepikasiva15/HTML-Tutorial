@@ -1,0 +1,501 @@
+/* =========================
+BASIC RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+font-family: Arial, sans-serif;
+background-color: #f5f7fb;
+color: #333;
+line-height: 1.6;
+}
+
+/* =========================
+FIXED NAVIGATION BAR
+========================= */
+
+.navbar {
+/* Fixed positioning */
+position: fixed;
+
+
+top: 0;
+left: 0;
+
+width: 100%;
+height: 70px;
+
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+padding: 0 8%;
+
+background-color: white;
+
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+/* Keeps navbar above other elements */
+z-index: 1000;
+
+
+}
+
+.logo {
+font-size: 25px;
+font-weight: bold;
+color: #4f46e5;
+}
+
+.navbar nav {
+display: flex;
+gap: 25px;
+}
+
+.navbar nav a {
+text-decoration: none;
+color: #333;
+font-weight: bold;
+}
+
+.navbar nav a:hover {
+color: #4f46e5;
+}
+
+/* =========================
+HERO SECTION
+========================= */
+
+.hero {
+min-height: 100vh;
+
+
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+gap: 50px;
+
+padding: 120px 10% 80px;
+
+background: linear-gradient(
+    135deg,
+    #eef2ff,
+    #f8fafc
+);
+
+
+}
+
+.hero-content {
+max-width: 600px;
+}
+
+.tagline {
+color: #4f46e5;
+font-size: 14px;
+font-weight: bold;
+letter-spacing: 2px;
+margin-bottom: 15px;
+}
+
+.hero h1 {
+font-size: 50px;
+line-height: 1.2;
+margin-bottom: 20px;
+}
+
+.hero-content > p:not(.tagline) {
+font-size: 18px;
+color: #666;
+margin-bottom: 30px;
+}
+
+/* =========================
+RELATIVE POSITIONING
+========================= */
+
+/*
+The CTA button uses relative positioning.
+The button moves 5px upward from its normal position
+when the user hovers over it.
+*/
+
+.cta-button {
+position: relative;
+
+
+display: inline-block;
+
+padding: 14px 28px;
+
+background-color: #4f46e5;
+color: white;
+
+text-decoration: none;
+font-weight: bold;
+
+border-radius: 8px;
+
+transition: 0.3s;
+
+
+}
+
+.cta-button:hover {
+/*
+Relative positioning allows the element
+to move without affecting other elements.
+*/
+top: -5px;
+
+
+background-color: #3730a3;
+
+
+}
+
+/* =========================
+PRODUCT CONTAINER
+========================= */
+
+/*
+IMPORTANT:
+position: relative creates the positioning
+reference for the absolute floating button.
+*/
+
+.product-container {
+position: relative;
+
+
+width: 350px;
+height: 350px;
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+background-color: #e0e7ff;
+
+border-radius: 50%;
+
+
+}
+
+/* Product */
+
+.product {
+width: 190px;
+height: 230px;
+
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+color: white;
+
+background: linear-gradient(
+    145deg,
+    #312e81,
+    #6366f1
+);
+
+border-radius: 20px;
+
+box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+
+
+}
+
+.product strong {
+font-size: 22px;
+margin-top: 10px;
+}
+
+/* =========================
+ABSOLUTE FLOATING BUTTON
+========================= */
+
+/*
+The button is positioned relative to
+.product-container.
+*/
+
+.floating-button {
+position: absolute;
+
+
+/* Bottom-right corner */
+bottom: 15px;
+right: 15px;
+
+width: 55px;
+height: 55px;
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+background-color: #ef4444;
+color: white;
+
+border-radius: 50%;
+
+text-decoration: none;
+
+font-size: 30px;
+font-weight: bold;
+
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+transition: 0.3s;
+
+
+}
+
+.floating-button:hover {
+transform: scale(1.1);
+background-color: #dc2626;
+}
+
+/* =========================
+FEATURES
+========================= */
+
+.features {
+padding: 90px 10%;
+background-color: white;
+}
+
+.section-heading {
+text-align: center;
+max-width: 650px;
+margin: 0 auto 50px;
+}
+
+.section-heading h2 {
+font-size: 36px;
+margin-bottom: 15px;
+}
+
+.section-heading p:last-child {
+color: #666;
+}
+
+.feature-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 25px;
+}
+
+.feature-card {
+padding: 30px;
+
+background-color: #f8fafc;
+
+border: 1px solid #e5e7eb;
+
+border-radius: 12px;
+
+text-align: center;
+
+transition: 0.3s;
+
+
+}
+
+.feature-card:hover {
+transform: translateY(-5px);
+
+
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+
+}
+
+.icon {
+font-size: 35px;
+margin-bottom: 15px;
+}
+
+.feature-card h3 {
+margin-bottom: 10px;
+}
+
+.feature-card p {
+color: #666;
+}
+
+/* =========================
+REVIEWS
+========================= */
+
+.reviews {
+padding: 90px 10%;
+background-color: #eef2ff;
+}
+
+.review-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 25px;
+}
+
+.review-card {
+background-color: white;
+
+
+padding: 30px;
+
+border-radius: 10px;
+
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+
+
+}
+
+.review-card p {
+color: #555;
+margin-bottom: 20px;
+}
+
+.review-card h4 {
+color: #4f46e5;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer {
+padding: 50px 10% 20px;
+
+
+background-color: #111827;
+color: white;
+
+text-align: center;
+
+
+}
+
+footer h2 {
+color: #818cf8;
+margin-bottom: 10px;
+}
+
+footer p {
+color: #d1d5db;
+margin-bottom: 8px;
+}
+
+.copyright {
+margin-top: 30px;
+
+
+padding-top: 20px;
+
+border-top: 1px solid #374151;
+
+color: #9ca3af;
+
+
+}
+
+/* =========================
+TABLET
+========================= */
+
+@media (max-width: 850px) {
+
+
+.hero {
+    flex-direction: column;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+.feature-grid,
+.review-grid {
+    grid-template-columns: 1fr 1fr;
+}
+
+
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+
+.navbar {
+    height: auto;
+
+    flex-direction: column;
+
+    padding: 15px;
+
+    gap: 10px;
+}
+
+.navbar nav {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.navbar nav a {
+    font-size: 14px;
+}
+
+.hero {
+    padding: 150px 6% 60px;
+}
+
+.hero h1 {
+    font-size: 32px;
+}
+
+.hero-content > p:not(.tagline) {
+    font-size: 16px;
+}
+
+.product-container {
+    width: 270px;
+    height: 270px;
+}
+
+.product {
+    width: 150px;
+    height: 190px;
+}
+
+.feature-grid,
+.review-grid {
+    grid-template-columns: 1fr;
+}
+
+.features,
+.reviews {
+    padding: 60px 6%;
+}
+
+
+}
